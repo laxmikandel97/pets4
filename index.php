@@ -81,6 +81,10 @@ $f3->route('GET|POST /order', function($f3) {
             elseif (strtolower($animal) == "cat"){
                 $pet1 = new Cat($animal);
             }
+            else if(strtolower($animal)=="rabbit"){
+                $pet1 = new Rabbit($animal);
+
+            }
             else {
                 $pet1 = new Pet("$animal");
             }
@@ -104,6 +108,7 @@ $f3->route('GET|POST /order2', function($f3) {
         $color = $_POST['color'];
         if(validColor($color))
         {
+            $_SESSION['pet1']->setColor("$color");
             $_SESSION['color']=$color;
             $f3->reroute('/results');
         }
