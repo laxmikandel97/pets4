@@ -116,6 +116,11 @@ $f3->route('GET|POST /order2', function($f3) {
             $f3->set("errors['color']","Please enter an color.");
         }
     }
+        $name = $_POST['name'];
+        echo "$name";
+        $_SESSION['pet1']->setName("$name");
+
+
 
 //    $_SESSION['animal'] = $_POST['animal'];
     $view = new Template();
@@ -126,6 +131,7 @@ $f3->route('GET|POST /order2', function($f3) {
 // define another route called order that displays a form
 $f3->route('GET|POST /results', function() {
 //    $_SESSION['color'] = $_POST['color'];
+    var_dump($_POST);
     $view = new Template();
     echo $view->render('views/results.html');
 });
