@@ -1,0 +1,16 @@
+{
+  "name": "laxmi/328/pets4",
+  "authors": [
+    {
+      "name": "Dallas Sloan",
+      "email": "dsloan4@mail.greenriver.edu"
+    },
+    {
+      "name": "Laxmi Kandel",
+      "email": "lkandel@greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
