@@ -7,7 +7,6 @@
  */
 
 // start a session - ONLY ever need to put this in our controller (all other pages get by transference)
-session_start();
 
 
 // Turn on error reporting
@@ -16,6 +15,9 @@ error_reporting(E_ALL);
 
 require("vendor/autoload.php");
 require_once ('model/validations.php');
+
+session_start();
+
 // instantiate F3
 $f3 = Base::instance(); // invoke static
 //set the debug level
@@ -73,7 +75,17 @@ $f3->route('GET|POST /order', function($f3) {
         $animal = $_POST['animal'];
         if(validAnimal($animal))
         {
+            if (strtolower($animal) == "dog" ){
+                $pet1 = new Dog($animal);
+            }
+            elseif (strtolower($animal) == "cat"){
+                $pet1 = new Cat($animal);
+            }
+            else {
+                $pet1 = new Pet("$animal");
+            }
             $_SESSION['animal']=$animal;
+            $_SESSION['pet1']= $pet1;
             $f3->reroute('/order2');
         }
         else{
