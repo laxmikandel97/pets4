@@ -7,13 +7,15 @@ class Pet
 {
     private $_name;
     private $_color;
+    private $_type;
 
     //Parameterized Constructor
 
-    function __construct($name="unknown", $color="?")
+    function __construct($name="unknown", $color="?", $type = "pet")
     {
         $this->_name = $name;
         $this->_color = $color;
+        $this->_type = $type;
     }
 
     function eat()
@@ -44,6 +46,11 @@ class Pet
     function setColor($color)
     {
         $this->_color = $color;
+    }
+
+    function setType($type)
+    {
+        $this->_type = $type;
     }
 
 

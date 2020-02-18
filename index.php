@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Shayna Jamieson, Laxmi Kandel
+ * @author Dallas Sloan, Laxmi Kandel
  * @version 1.0
  * URL: http://sjamieson.greenriverdev.com/328/pets2/index.php
  * Date: January 24, 2020
